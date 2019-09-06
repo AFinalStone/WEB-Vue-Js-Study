@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<div id="components-demo">
+    <component-a title="我是标题" @clicka="clicka"></component-a>
+</div>
+
+<script type="text/javascript">
+    // 定义一个名为 button-counter 的新组件
+    var ComponentA = {
+        template: '<div><h1>H1。。。</h1><button >局部注册</button></div>',
+    }
+    var vue = new Vue({
+        el: '#components-demo',
+        components: {
+            'component-a': ComponentA,
+        }
+    })
+</script>
+
+</body>
+</html>

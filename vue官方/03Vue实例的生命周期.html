@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<div id="app">
+    {{msg}}
+</div>
+
+<script type="text/javascript">
+
+    // 该对象被加入到一个 Vue 实例中
+    var vm = new Vue({
+        el: "#app",
+
+        data: {msg: "hi vue"},
+        //在实例初始化之后，数据观察（data observer）和 event/watcher事件配置之前被调用
+        beforeCreate: function () {
+            console.log("beforeCreate");
+        },
+
+        Create: function () {
+            console.log("Create");
+        },
+        //挂载
+        beforeMount: function () {
+            console.log("Create");
+        },
+        //挂载成功
+        mounted: function () {
+            console.log("Create");
+        },
+        beforeUpdate:function () {
+
+        }
+    })
+</script>
+</body>
+</html>

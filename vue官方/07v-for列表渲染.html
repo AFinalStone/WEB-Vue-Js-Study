@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <li v-for="item, index in items" :key="index">
+            {{index}}: {{item.message}}
+        </li>
+    </ul>
+    <ul>
+        <li v-for="value,key in object" :key="key">
+            {{key}}：{{value}}
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            items: [{message: "one"}, {message: "two"}],
+            object: {title: "怎么样才能把vue学好？", author: "石头", publishedAt: "2019-04-03"},
+        }
+    })
+</script>
+</body>
+</html>

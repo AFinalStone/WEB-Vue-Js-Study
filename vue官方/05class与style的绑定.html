@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<div id="app">
+    <div class="test"
+         v-bind:class="{active:isActive, green:isGreen}"
+         style="width: 200px;height: 200px;text-align: center;line-height: 200px">
+        你好啊Vue!
+    </div>
+    <div :style="{color:color,fontSize:size,background:isRead?'#FF0000':''}">改变样式</div>
+</div>
+
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '第一个练习：Hello Vue!',
+            test: "test",
+            isActive: true,
+            isGreen: false,
+            color: "green",
+            size: "50px",
+            isRead: true
+        }
+    })
+</script>
+
+<style>
+
+    .test {
+        font-size: 30px;
+    }
+
+    .green {
+        color: green;
+    }
+
+    .active {
+        background: red;
+    }
+
+</style>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<div id="app">
+    {{msg}}
+    <p>Using mustaches:{{rawHtml}}</p>
+    <p v-html="rawHtml"></p>
+    <div v-bind:class="color">测试</div>
+    <button @click="changeColor">切换上面div的颜色</button>
+    <p>{{number +1}}</p>
+    <p>{{ok == true ? "YES":"NO"}}</p>
+    <p>{{message.split(' ').reverse().join(' ')}}</p>
+</div>
+
+<script type="text/javascript">
+
+    // 该对象被加入到一个 Vue 实例中
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "hi vue",
+            rawHtml: '<span style="color:red">我是红色的</span>',
+            color: 'red',
+            number: 7,
+            ok: 1,
+            message: "vue is very good"
+        },
+        methods: {
+            changeColor: function () {
+                if (this.color == 'red') {
+                    this.color = 'blue'
+                } else {
+                    this.color = 'red'
+                }
+            }
+        }
+    })
+</script>
+<style>
+    .red {
+        color: red;
+    }
+
+    .blue {
+        color: blue;
+    }
+</style>
+</body>
+</html>
